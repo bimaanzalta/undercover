@@ -1,0 +1,411 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =============================================
+   BASE BRUTALISM STYLES
+   ============================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  background-color: #FFFFFF;
+  color: #000000;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* =============================================
+   CUSTOM SCROLLBAR
+   ============================================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFFFFF;
+  border-left: 2px solid #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000000;
+  border: 2px solid #FFFFFF;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FFE600;
+  border: 2px solid #000000;
+}
+
+/* =============================================
+   BRUTALISM UTILITY CLASSES
+   ============================================= */
+
+@layer utilities {
+  .brutal-border {
+    border: 4px solid #000000;
+  }
+
+  .brutal-border-2 {
+    border: 2px solid #000000;
+  }
+
+  .brutal-shadow {
+    box-shadow: 6px 6px 0 #000000;
+  }
+
+  .brutal-shadow-sm {
+    box-shadow: 3px 3px 0 #000000;
+  }
+
+  .brutal-shadow-lg {
+    box-shadow: 10px 10px 0 #000000;
+  }
+
+  .brutal-shadow-xl {
+    box-shadow: 14px 14px 0 #000000;
+  }
+
+  .brutal-shadow-yellow {
+    box-shadow: 6px 6px 0 #FFE600;
+  }
+
+  .brutal-shadow-red {
+    box-shadow: 6px 6px 0 #FF2020;
+  }
+
+  .brutal-shadow-blue {
+    box-shadow: 6px 6px 0 #0000FF;
+  }
+
+  .brutal-hover {
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+  }
+
+  .brutal-hover:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0 #000000;
+  }
+
+  .brutal-hover:active {
+    transform: translate(3px, 3px);
+    box-shadow: 3px 3px 0 #000000;
+  }
+
+  .brutal-active:active {
+    transform: translate(6px, 6px);
+    box-shadow: 0 0 0 #000000;
+  }
+
+  .text-brutal-yellow { color: #FFE600; }
+  .text-brutal-red { color: #FF2020; }
+  .text-brutal-blue { color: #0000FF; }
+  .text-brutal-green { color: #00C800; }
+
+  .bg-brutal-yellow { background-color: #FFE600; }
+  .bg-brutal-red { background-color: #FF2020; }
+  .bg-brutal-blue { background-color: #0000FF; }
+  .bg-brutal-green { background-color: #00C800; }
+
+  .font-ultra {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .uppercase-title {
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+  }
+}
+
+/* =============================================
+   COMPONENT STYLES
+   ============================================= */
+
+@layer components {
+  .btn-brutal {
+    @apply inline-block px-6 py-3 bg-brutal-yellow border-4 border-black font-bold uppercase text-black;
+    box-shadow: 6px 6px 0 #000000;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Space Grotesk', system-ui;
+    letter-spacing: 0.05em;
+  }
+
+  .btn-brutal:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0 #000000;
+  }
+
+  .btn-brutal:active {
+    transform: translate(4px, 4px);
+    box-shadow: 2px 2px 0 #000000;
+  }
+
+  .btn-brutal-red {
+    @apply btn-brutal bg-brutal-red text-white;
+    box-shadow: 6px 6px 0 #000000;
+  }
+
+  .btn-brutal-black {
+    @apply btn-brutal bg-black text-white;
+    box-shadow: 6px 6px 0 #FFE600;
+  }
+
+  .btn-brutal-black:hover {
+    box-shadow: 8px 8px 0 #FFE600;
+  }
+
+  .btn-brutal-white {
+    @apply btn-brutal bg-white text-black;
+  }
+
+  .card-brutal {
+    @apply bg-white border-4 border-black p-4;
+    box-shadow: 6px 6px 0 #000000;
+  }
+
+  .card-brutal-yellow {
+    @apply card-brutal bg-brutal-yellow;
+  }
+
+  .input-brutal {
+    @apply w-full bg-white border-4 border-black px-4 py-3 font-bold text-black;
+    box-shadow: 4px 4px 0 #000000;
+    font-family: 'Space Grotesk', system-ui;
+    outline: none;
+    transition: box-shadow 0.1s ease;
+  }
+
+  .input-brutal:focus {
+    box-shadow: 6px 6px 0 #FFE600;
+    border-color: #000000;
+  }
+
+  .input-brutal::placeholder {
+    color: #999999;
+    font-weight: 400;
+  }
+
+  .tag-civilian {
+    @apply inline-block px-3 py-1 bg-brutal-green text-white border-2 border-black font-bold uppercase text-xs;
+    box-shadow: 3px 3px 0 #000000;
+  }
+
+  .tag-undercover {
+    @apply inline-block px-3 py-1 bg-brutal-blue text-white border-2 border-black font-bold uppercase text-xs;
+    box-shadow: 3px 3px 0 #000000;
+  }
+
+  .tag-mrwhite {
+    @apply inline-block px-3 py-1 bg-black text-white border-2 border-black font-bold uppercase text-xs;
+    box-shadow: 3px 3px 0 #FFE600;
+  }
+
+  .tag-eliminated {
+    @apply inline-block px-3 py-1 bg-gray-300 text-gray-500 border-2 border-gray-400 font-bold uppercase text-xs line-through;
+    box-shadow: 3px 3px 0 #999999;
+  }
+}
+
+/* =============================================
+   ANIMATIONS
+   ============================================= */
+
+@keyframes slam-in {
+  0% {
+    transform: scale(3) rotate(-10deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(0.9) rotate(3deg);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(1.05) rotate(-1deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-6px); }
+  20%, 40%, 60%, 80% { transform: translateX(6px); }
+}
+
+@keyframes reveal-down {
+  from {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  to {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+
+@keyframes flash-yellow {
+  0%, 100% { background-color: transparent; }
+  50% { background-color: #FFE600; }
+}
+
+@keyframes bounce-brutal {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes blink-border {
+  0%, 100% { border-color: #000000; }
+  50% { border-color: #FFE600; }
+}
+
+.animate-slam-in {
+  animation: slam-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+.animate-reveal-down {
+  animation: reveal-down 0.4s ease-out forwards;
+}
+
+.animate-flash-yellow {
+  animation: flash-yellow 0.8s ease-in-out 3;
+}
+
+.animate-bounce-brutal {
+  animation: bounce-brutal 0.8s ease-in-out infinite;
+}
+
+.animate-blink-border {
+  animation: blink-border 1s step-start infinite;
+}
+
+/* =============================================
+   PHASE INDICATOR STYLES
+   ============================================= */
+
+.phase-clue {
+  @apply bg-brutal-yellow;
+}
+
+.phase-voting {
+  @apply bg-brutal-red;
+  color: white;
+}
+
+.phase-result {
+  @apply bg-black;
+  color: white;
+}
+
+.phase-finished {
+  @apply bg-brutal-green;
+  color: white;
+}
+
+/* =============================================
+   ROLE REVEAL
+   ============================================= */
+
+.role-card-civilian {
+  background-color: #00C800;
+  color: white;
+}
+
+.role-card-undercover {
+  background-color: #0000FF;
+  color: white;
+}
+
+.role-card-mrwhite {
+  background-color: #000000;
+  color: #FFE600;
+}
+
+/* =============================================
+   NOISE TEXTURE (subtle)
+   ============================================= */
+
+.noise-bg {
+  position: relative;
+}
+
+.noise-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.05;
+}
+
+/* =============================================
+   STICKER ELEMENTS
+   ============================================= */
+
+.sticker {
+  display: inline-block;
+  transform: rotate(-2deg);
+  border: 3px solid #000;
+  padding: 4px 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.sticker-yellow {
+  background-color: #FFE600;
+  box-shadow: 3px 3px 0 #000;
+}
+
+.sticker-red {
+  background-color: #FF2020;
+  color: white;
+  box-shadow: 3px 3px 0 #000;
+}
+
+/* =============================================
+   LOADING
+   ============================================= */
+
+.loading-dots::after {
+  content: '';
+  animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+  0%   { content: ''; }
+  25%  { content: '.'; }
+  50%  { content: '..'; }
+  75%  { content: '...'; }
+  100% { content: ''; }
+}
+
+/* =============================================
+   SELECTION
+   ============================================= */
+
+::selection {
+  background: #FFE600;
+  color: #000000;
+}
